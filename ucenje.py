@@ -192,10 +192,12 @@ def test(model):
     avg_test_loss = loss / len(test_loader)
     accuracy = correct_predictions / total_samples
     print(f"Test loss: {avg_test_loss:.4f}, Accuracy: {accuracy:.4f}")
+
+
     
 if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(device)
     model = train()
     test(model)
-
+    torch.save(model, "tr_model.pth")
