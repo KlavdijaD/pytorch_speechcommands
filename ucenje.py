@@ -198,3 +198,4 @@ if __name__ == "__main__":
     print(device)
     model = train()
     test(model)
+    torch.save(model, "model.pth")
